@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BE09372223E674000056C824 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE09372123E674000056C824 /* StartViewController.swift */; };
 		BE14C7BA229F22E100F971D2 /* UnlockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE14C7B9229F22E100F971D2 /* UnlockViewController.swift */; };
 		BE14C7BC22A0365100F971D2 /* slimeSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BE14C7BB22A0365100F971D2 /* slimeSound.mp3 */; };
 		BE14C7C222A0593A00F971D2 /* newSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BE14C7C122A0593A00F971D2 /* newSound.mp3 */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BE09372123E674000056C824 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		BE14C7B9229F22E100F971D2 /* UnlockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnlockViewController.swift; sourceTree = "<group>"; };
 		BE14C7BB22A0365100F971D2 /* slimeSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = slimeSound.mp3; sourceTree = "<group>"; };
 		BE14C7C122A0593A00F971D2 /* newSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = newSound.mp3; sourceTree = "<group>"; };
@@ -45,6 +47,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BE15A99F25BB5CBD0013B7CE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BEFAAD75229DC42C0011246A /* ViewController.swift */,
+				BE14C7B9229F22E100F971D2 /* UnlockViewController.swift */,
+				BE09372123E674000056C824 /* StartViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		BEFAAD67229DC42C0011246A = {
 			isa = PBXGroup;
 			children = (
@@ -64,27 +76,18 @@
 		BEFAAD72229DC42C0011246A /* slimeTapGame */ = {
 			isa = PBXGroup;
 			children = (
+				BE15A99F25BB5CBD0013B7CE /* Views */,
 				BE14C7C322A07C3A00F971D2 /* slimesound2.wav */,
 				BE14C7C122A0593A00F971D2 /* newSound.mp3 */,
 				BE14C7BB22A0365100F971D2 /* slimeSound.mp3 */,
 				BEFAAD73229DC42C0011246A /* AppDelegate.swift */,
-				BEFAAD75229DC42C0011246A /* ViewController.swift */,
 				BEFAAD77229DC42C0011246A /* Main.storyboard */,
-				BE14C7B9229F22E100F971D2 /* UnlockViewController.swift */,
 				BEFAAD7A229DC42F0011246A /* Assets.xcassets */,
 				BEFAAD7C229DC42F0011246A /* LaunchScreen.storyboard */,
 				BEFAAD7F229DC42F0011246A /* Info.plist */,
 				BEFAAD89229E06580011246A /* Ranchers-Regular.ttf */,
-				BEFAAD8D229ED6D70011246A /* Particles */,
 			);
 			path = slimeTapGame;
-			sourceTree = "<group>";
-		};
-		BEFAAD8D229ED6D70011246A /* Particles */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Particles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -163,6 +166,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BEFAAD76229DC42C0011246A /* ViewController.swift in Sources */,
+				BE09372223E674000056C824 /* StartViewController.swift in Sources */,
 				BEFAAD74229DC42C0011246A /* AppDelegate.swift in Sources */,
 				BE14C7BA229F22E100F971D2 /* UnlockViewController.swift in Sources */,
 			);
@@ -311,14 +315,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = L4FDMQMQJH;
+				CURRENT_PROJECT_VERSION = 1.1;
+				DEVELOPMENT_TEAM = MSG4PLFSQ4;
 				INFOPLIST_FILE = slimeTapGame/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = cunane.slimeTapGame;
+				MARKETING_VERSION = 1.1;
+				PRODUCT_BUNDLE_IDENTIFIER = slime.tap.game;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -330,14 +336,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = L4FDMQMQJH;
+				CURRENT_PROJECT_VERSION = 1.1;
+				DEVELOPMENT_TEAM = MSG4PLFSQ4;
 				INFOPLIST_FILE = slimeTapGame/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = cunane.slimeTapGame;
+				MARKETING_VERSION = 1.1;
+				PRODUCT_BUNDLE_IDENTIFIER = slime.tap.game;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

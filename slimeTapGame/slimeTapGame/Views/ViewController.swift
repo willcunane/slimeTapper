@@ -9,7 +9,7 @@
 import UIKit
 import AVFoundation
 
-
+// set int for tap count
 var tapIncrease = 1
 
 class ViewController: UIViewController {
@@ -59,7 +59,6 @@ class ViewController: UIViewController {
     
     // Play sound function
     func playSound(){
-        
         if let player = audioPlayer{
             if player.isPlaying {
                 player.pause()

@@ -11,36 +11,36 @@ import UIKit
 class UnlockViewController: UIViewController {
 
     @IBOutlet weak var rewardDisplay: UIImageView!
-    private var tag : Int = 0
+    private var tapCount : Int = 0
     public func setTag(_ tag : Int){
-        self.tag = tag
+        self.tapCount = tag
     }
     @IBAction func collect(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
         
     }
     func getReward(){
-        if self.tag >= 100{
+        if self.tapCount >= 100{
             //change the image for
             rewardDisplay.image = UIImage.init(named: "2pertap.png")
         }
-        if self.tag >= 300{
+        if self.tapCount >= 300{
             //change the image for
             rewardDisplay.image = UIImage.init(named: "4Pertap.png")
         }
-        if self.tag >= 500{
+        if self.tapCount >= 500{
             //change the image for
             rewardDisplay.image = UIImage.init(named: "GreenSlimeColor_.png")
         }
-        if self.tag >= 1000{
+        if self.tapCount >= 1000{
             //change the image for
             rewardDisplay.image = UIImage.init(named: "NewMusic.png")
         }
-        if self.tag >= 5000{
+        if self.tapCount >= 5000{
             //change the image for
             rewardDisplay.image = UIImage.init(named: "NewSlimeSound_.png")
         }
-        if self.tag >= 10000{
+        if self.tapCount >= 10000{
             //change the image for
             rewardDisplay.image = UIImage.init(named: "RedSlimeColor_.png")
         }
@@ -51,16 +51,6 @@ class UnlockViewController: UIViewController {
         getReward()
         // Do any additional setup after loading the view.
     }
-    
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
