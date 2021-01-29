@@ -12,17 +12,20 @@ import AVFoundation
 // set int for tap count
 var tapIncrease = 1
 
-class ViewController: UIViewController {
-
+class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource  {
+	
     var audioPlayer : AVAudioPlayer?
-    
+		var Levels = [
+			[#imageLiteral(resourceName: "100"), 100],
+			[#imageLiteral(resourceName: "300"), 300],
+			[#imageLiteral(resourceName: "500"), 500],
+			[#imageLiteral(resourceName: "1000"), 1000],
+			[#imageLiteral(resourceName: "5000"), 5000],
+			[#imageLiteral(resourceName: "10000"), 10000]
+		]
+		
     @IBOutlet weak var buttonLink: UIButton!
-    @IBOutlet weak var lvl1: UIButton!
-    @IBOutlet weak var lvl2: UIButton!
-    @IBOutlet weak var lvl3: UIButton!
-    @IBOutlet weak var lvl4: UIButton!
-    @IBOutlet weak var lvl5: UIButton!
-    @IBOutlet weak var lvl6: UIButton!
+    @IBOutlet weak var collectionView: UICollectionView!
     
     // Stores tap count when app is closed
     var tapCount : Int{
@@ -34,8 +37,29 @@ class ViewController: UIViewController {
             self.tapCountLabel.text = "\(newValue)"
         }
     }
-    
-    // -------------------------------------------- \\
+	
+	func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+		return Levels.count
+	}
+	
+	func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+		guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: LevelsCollectionViewCell.reuseID, for: indexPath) as? LevelsCollectionViewCell else {
+						return collectionView.dequeueReusableCell(withReuseIdentifier: "blank", for: indexPath)
+		}
+		let levelValue = Levels[indexPath.item][1]
+		checkLevel(tapCount: tapCount, unlockValue: (levelValue as! Int))
+		
+		let cellImage = Levels[indexPath.item][0]
+		cell.levelIcon.image = (cellImage as! UIImage)
+		return cell
+	}
+	
+	func checkLevel(tapCount : Int, unlockValue : Int) {
+		if tapCount >= unlockValue {
+			
+		}
+		
+	}
     
     // loads unlock screen after tap count hits specific number
     @IBAction func loadUnlock(_ sender: Any){
@@ -47,12 +71,7 @@ class ViewController: UIViewController {
     // resets count
     @IBAction func resetButton(_ sender: Any) {
         self.tapCount = 0
-        lvl1.isEnabled = false
-        lvl2.isEnabled = false
-        lvl3.isEnabled = false
-        lvl4.isEnabled = false
-        lvl5.isEnabled = false
-        lvl6.isEnabled = false
+
     }
     
     
@@ -74,7 +93,7 @@ class ViewController: UIViewController {
     //tab slime actions and animate
     @IBAction func slimeTap(_ sender: UIButton) {
         tapCount += tapIncrease
-        checkLevel(tapCount)
+    //    checkLevel(tapCount)
         
         sender.layer.removeAllAnimations()
         
@@ -91,46 +110,46 @@ class ViewController: UIViewController {
     //checks level and changes locked/ unlocked images
     //enables buttons to load UnlockViewController
     
-    func checkLevel(_ count: Int){
-        self.tapCountLabel.text = "\(tapCount)"
-        if count >= 100 && !lvl1.isEnabled{
-            //change the image for
-            lvl1.isEnabled = true
-            let img = UIImage.init(named: "100unlocked.png")
-            lvl1.setBackgroundImage(img, for: .normal)
-        }
-        if count >= 300 && !lvl2.isEnabled{
-            //change the image for
-            lvl2.isEnabled = true
-            let img = UIImage.init(named: "300unlocked.png")
-            lvl2.setBackgroundImage(img, for: .normal)
-        }
-        if count >= 500 && !lvl3.isEnabled{
-            //change the image for
-            lvl3.isEnabled = true
-            let img = UIImage.init(named: "500unlocked.png")
-            lvl3.setBackgroundImage(img, for: .normal)
-        }
-        if count >= 1000 && !lvl4.isEnabled{
-            //change the image for
-            lvl4.isEnabled = true
-            let img = UIImage.init(named: "1000unlocked.png")
-            lvl4.setBackgroundImage(img, for: .normal)
-        }
-        if count >= 5000 && !lvl5.isEnabled{
-            //change the image for
-            lvl5.isEnabled = true
-            let img = UIImage.init(named: "5000unlocked.png")
-            lvl5.setBackgroundImage(img, for: .normal)
-        }
-        if count >= 10000 && !lvl6.isEnabled{
-            //change the image for
-            lvl6.isEnabled = true
-            let img = UIImage.init(named: "10000unlocked.png")
-            lvl6.setBackgroundImage(img, for: .normal)
-        }
-
-    }
+//    func checkLevel(_ count: Int){
+//        self.tapCountLabel.text = "\(tapCount)"
+//        if count >= 100 && !lvl1.isEnabled{
+//            //change the image for
+//            lvl1.isEnabled = true
+//            let img = UIImage.init(named: "100unlocked.png")
+//            lvl1.setBackgroundImage(img, for: .normal)
+//        }
+//        if count >= 300 && !lvl2.isEnabled{
+//            //change the image for
+//            lvl2.isEnabled = true
+//            let img = UIImage.init(named: "300unlocked.png")
+//            lvl2.setBackgroundImage(img, for: .normal)
+//        }
+//        if count >= 500 && !lvl3.isEnabled{
+//            //change the image for
+//            lvl3.isEnabled = true
+//            let img = UIImage.init(named: "500unlocked.png")
+//            lvl3.setBackgroundImage(img, for: .normal)
+//        }
+//        if count >= 1000 && !lvl4.isEnabled{
+//            //change the image for
+//            lvl4.isEnabled = true
+//            let img = UIImage.init(named: "1000unlocked.png")
+//            lvl4.setBackgroundImage(img, for: .normal)
+//        }
+//        if count >= 5000 && !lvl5.isEnabled{
+//            //change the image for
+//            lvl5.isEnabled = true
+//            let img = UIImage.init(named: "5000unlocked.png")
+//            lvl5.setBackgroundImage(img, for: .normal)
+//        }
+//        if count >= 10000 && !lvl6.isEnabled{
+//            //change the image for
+//            lvl6.isEnabled = true
+//            let img = UIImage.init(named: "10000unlocked.png")
+//            lvl6.setBackgroundImage(img, for: .normal)
+//        }
+//
+//    }
     
     //tap counter label
     @IBOutlet weak var tapCountLabel: UILabel!
@@ -186,10 +205,10 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        //let sound = Bundle.main.path(forResource: "slimeSound", ofType: "mp3")
+			collectionView.delegate = self
+			collectionView.dataSource = self
         setSound("slimeSound","mp3")
-        checkLevel(tapCount)
+   //     checkLevel(tapCount)
         changeAssets(tapCount)
         self.buttonLink.adjustsImageWhenHighlighted = false
     }
@@ -198,7 +217,7 @@ class ViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        checkLevel(tapCount)
+  //      checkLevel(tapCount)
         changeAssets(tapCount)
         
     }

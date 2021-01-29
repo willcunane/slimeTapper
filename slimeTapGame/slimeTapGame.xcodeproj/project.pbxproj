@@ -12,6 +12,7 @@
 		BE14C7BC22A0365100F971D2 /* slimeSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BE14C7BB22A0365100F971D2 /* slimeSound.mp3 */; };
 		BE14C7C222A0593A00F971D2 /* newSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BE14C7C122A0593A00F971D2 /* newSound.mp3 */; };
 		BE14C7C422A07C3A00F971D2 /* slimesound2.wav in Resources */ = {isa = PBXBuildFile; fileRef = BE14C7C322A07C3A00F971D2 /* slimesound2.wav */; };
+		BE15A9A325BB5E570013B7CE /* Levels.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE15A9A225BB5E570013B7CE /* Levels.swift */; };
 		BEFAAD74229DC42C0011246A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEFAAD73229DC42C0011246A /* AppDelegate.swift */; };
 		BEFAAD76229DC42C0011246A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEFAAD75229DC42C0011246A /* ViewController.swift */; };
 		BEFAAD79229DC42C0011246A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEFAAD77229DC42C0011246A /* Main.storyboard */; };
@@ -26,6 +27,7 @@
 		BE14C7BB22A0365100F971D2 /* slimeSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = slimeSound.mp3; sourceTree = "<group>"; };
 		BE14C7C122A0593A00F971D2 /* newSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = newSound.mp3; sourceTree = "<group>"; };
 		BE14C7C322A07C3A00F971D2 /* slimesound2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = slimesound2.wav; sourceTree = "<group>"; };
+		BE15A9A225BB5E570013B7CE /* Levels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Levels.swift; sourceTree = "<group>"; };
 		BEFAAD70229DC42C0011246A /* slimeTapGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = slimeTapGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEFAAD73229DC42C0011246A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BEFAAD75229DC42C0011246A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -51,6 +53,7 @@
 			isa = PBXGroup;
 			children = (
 				BEFAAD75229DC42C0011246A /* ViewController.swift */,
+				BE15A9A225BB5E570013B7CE /* Levels.swift */,
 				BE14C7B9229F22E100F971D2 /* UnlockViewController.swift */,
 				BE09372123E674000056C824 /* StartViewController.swift */,
 			);
@@ -165,6 +168,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE15A9A325BB5E570013B7CE /* Levels.swift in Sources */,
 				BEFAAD76229DC42C0011246A /* ViewController.swift in Sources */,
 				BE09372223E674000056C824 /* StartViewController.swift in Sources */,
 				BEFAAD74229DC42C0011246A /* AppDelegate.swift in Sources */,
