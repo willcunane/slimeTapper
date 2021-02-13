@@ -10,7 +10,7 @@ import UIKit
 import AVFoundation
 
 // set int for tap count
-var tapIncrease = 1
+var tapIncrease = 100
 
 class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource  {
 	
@@ -21,7 +21,18 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
 			[#imageLiteral(resourceName: "500"), 500],
 			[#imageLiteral(resourceName: "1000"), 1000],
 			[#imageLiteral(resourceName: "5000"), 5000],
-			[#imageLiteral(resourceName: "10000"), 10000]
+			[#imageLiteral(resourceName: "10000"), 10000],
+			[#imageLiteral(resourceName: "10000"), 20000],
+			[#imageLiteral(resourceName: "10000"), 50000],
+			[#imageLiteral(resourceName: "10000"), 100000],
+			[#imageLiteral(resourceName: "10000"), 500000],
+			[#imageLiteral(resourceName: "10000"), 1000000],
+			[#imageLiteral(resourceName: "10000"), 5000000],
+			[#imageLiteral(resourceName: "10000"), 10000000],
+			[#imageLiteral(resourceName: "10000"), 500000000],
+			[#imageLiteral(resourceName: "10000"), 1000000000],
+			[#imageLiteral(resourceName: "10000"), 5000000000],
+			[#imageLiteral(resourceName: "10000"), 100000000000]
 		]
 		
     @IBOutlet weak var buttonLink: UIButton!
@@ -38,25 +49,50 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         }
     }
 	
+	// Cell count
 	func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
 		return Levels.count
 	}
 	
+	// Cell contents
 	func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 		guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: LevelsCollectionViewCell.reuseID, for: indexPath) as? LevelsCollectionViewCell else {
 						return collectionView.dequeueReusableCell(withReuseIdentifier: "blank", for: indexPath)
 		}
+		
 		let levelValue = Levels[indexPath.item][1]
 		checkLevel(tapCount: tapCount, unlockValue: (levelValue as! Int))
 		
-		let cellImage = Levels[indexPath.item][0]
-		cell.levelIcon.image = (cellImage as! UIImage)
+		let cellText = "\(Levels[indexPath.item][1])"
+		cell.valueLabel.text = cellText
+		
+		cell.levelIcon.image = #imageLiteral(resourceName: "blankBG")
+		
+		if levelValue as! Int >= tapCount {
+			cell.disabledImage.backgroundColor = #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1)
+			cell.disabledImage.layer.cornerRadius = 19
+			cell.lockIcon.image = #imageLiteral(resourceName: "download")
+		}
+		
 		return cell
+	}
+	
+	// Cell tapped
+	func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+		guard collectionView.dequeueReusableCell(withReuseIdentifier: LevelsCollectionViewCell.reuseID, for: indexPath) is LevelsCollectionViewCell else {
+						return
+		}
+		let levelValue = Levels[indexPath.item][1]
+		print(tapCount, levelValue)
+		checkLevel(tapCount: tapCount, unlockValue: levelValue as! Int)
+
 	}
 	
 	func checkLevel(tapCount : Int, unlockValue : Int) {
 		if tapCount >= unlockValue {
-			
+			print("This level is unlocked")
+		} else {
+			print("This level is locked")
 		}
 		
 	}
@@ -208,7 +244,6 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
 			collectionView.delegate = self
 			collectionView.dataSource = self
         setSound("slimeSound","mp3")
-   //     checkLevel(tapCount)
         changeAssets(tapCount)
         self.buttonLink.adjustsImageWhenHighlighted = false
     }
@@ -217,7 +252,6 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-  //      checkLevel(tapCount)
         changeAssets(tapCount)
         
     }

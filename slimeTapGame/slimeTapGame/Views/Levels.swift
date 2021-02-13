@@ -12,6 +12,10 @@ import UIKit
 class LevelsCollectionViewCell: UICollectionViewCell {
 	
 	@IBOutlet weak var levelIcon: UIImageView!
+	@IBOutlet weak var valueLabel: UILabel!
+	@IBOutlet weak var lockIcon: UIImageView!
+	@IBOutlet weak var disabledImage: UIImageView!
+	
 	public static var reuseID : String = "reuseID"
 	
 }

@@ -117,17 +117,46 @@
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="m1h-Sh-aqU">
                                                     <rect key="frame" x="0.0" y="0.0" width="160" height="60"/>
                                                 </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nta-OM-iEl">
+                                                    <rect key="frame" x="0.0" y="0.0" width="160" height="60"/>
+                                                    <fontDescription key="fontDescription" name="Ranchers-Regular" family="Ranchers" pointSize="21"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oZ2-Od-QG2">
+                                                    <rect key="frame" x="60" y="10" width="40" height="40"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="oZ2-Od-QG2" secondAttribute="height" multiplier="1:1" id="Jz3-Lp-tra"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.59999999999999998" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="m1R-Xc-4wS">
+                                                    <rect key="frame" x="2.3333333333333286" y="0.33333333333333215" width="155.33333333333337" height="59.333333333333343"/>
+                                                </imageView>
                                             </subviews>
                                         </view>
                                         <constraints>
+                                            <constraint firstItem="nta-OM-iEl" firstAttribute="width" secondItem="m1h-Sh-aqU" secondAttribute="width" id="1aA-Vp-EdY"/>
                                             <constraint firstItem="m1h-Sh-aqU" firstAttribute="width" secondItem="z0v-kc-y03" secondAttribute="width" id="58Z-JK-kAB"/>
+                                            <constraint firstItem="oZ2-Od-QG2" firstAttribute="centerY" secondItem="z0v-kc-y03" secondAttribute="centerY" id="5SK-5t-NKg"/>
                                             <constraint firstItem="m1h-Sh-aqU" firstAttribute="centerX" secondItem="z0v-kc-y03" secondAttribute="centerX" id="D5d-Fd-Twf"/>
+                                            <constraint firstItem="m1R-Xc-4wS" firstAttribute="width" secondItem="nta-OM-iEl" secondAttribute="width" multiplier="0.97" id="LGT-mT-gVL"/>
+                                            <constraint firstItem="nta-OM-iEl" firstAttribute="centerX" secondItem="m1h-Sh-aqU" secondAttribute="centerX" id="LX8-fZ-fa7"/>
+                                            <constraint firstItem="oZ2-Od-QG2" firstAttribute="centerX" secondItem="z0v-kc-y03" secondAttribute="centerX" id="MyI-MM-SWX"/>
                                             <constraint firstItem="m1h-Sh-aqU" firstAttribute="height" secondItem="z0v-kc-y03" secondAttribute="height" id="MyR-3G-pVu"/>
+                                            <constraint firstItem="nta-OM-iEl" firstAttribute="centerY" secondItem="m1h-Sh-aqU" secondAttribute="centerY" id="R37-0l-NeP"/>
+                                            <constraint firstItem="m1R-Xc-4wS" firstAttribute="centerX" secondItem="nta-OM-iEl" secondAttribute="centerX" id="Xl4-q5-n22"/>
+                                            <constraint firstItem="m1R-Xc-4wS" firstAttribute="centerY" secondItem="nta-OM-iEl" secondAttribute="centerY" id="cMc-OH-iAs"/>
+                                            <constraint firstItem="oZ2-Od-QG2" firstAttribute="width" secondItem="nta-OM-iEl" secondAttribute="height" multiplier="2:3" id="cOU-tl-wau"/>
+                                            <constraint firstItem="m1R-Xc-4wS" firstAttribute="height" secondItem="nta-OM-iEl" secondAttribute="height" multiplier="0.99" id="eke-UH-Pat"/>
                                             <constraint firstItem="m1h-Sh-aqU" firstAttribute="centerY" secondItem="z0v-kc-y03" secondAttribute="centerY" id="j1J-7x-5qt"/>
+                                            <constraint firstItem="nta-OM-iEl" firstAttribute="height" secondItem="m1h-Sh-aqU" secondAttribute="height" id="uli-TS-o39"/>
                                         </constraints>
                                         <size key="customSize" width="160" height="60"/>
                                         <connections>
+                                            <outlet property="disabledImage" destination="m1R-Xc-4wS" id="iux-on-uKB"/>
                                             <outlet property="levelIcon" destination="m1h-Sh-aqU" id="nhS-nM-FD2"/>
+                                            <outlet property="lockIcon" destination="oZ2-Od-QG2" id="joi-oW-ceI"/>
+                                            <outlet property="valueLabel" destination="nta-OM-iEl" id="Ov7-Fa-5qO"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
